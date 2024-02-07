@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class VerifyIfHasCertificationUseCase {
+public class StudentCertificationAnswersUseCase {
 
     @Autowired
     private CertificartionStudentRepository certificartionStudentRepository;
 
     public boolean execute(VerifyHasCertificationDTO dto) {
-       var result = certificartionStudentRepository.findByStudentEmailAndTechnology(dto.getEmail(), dto.getTechnology());
+        var result = certificartionStudentRepository.findByStudentEmailAndTechnology(dto.getEmail(), dto.getTechnology());
         return !result.isEmpty();
     }
 }
